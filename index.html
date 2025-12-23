@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
+    @font-face {
+        font-family: 'Kanit';
+        src: url(./Kanit./Kanit-Regular.ttf);
+    }
     body {
         background-color: gray;
+        font-family: 'Kanit';
     }
-    #register from {
-        color: rgb(214, 207, 207);
+    #register\ from {
+        color: white;
+        padding-left: 20px;
+        margin-left: 20px;
+        padding-right: 20px;
+        margin-right: 20px;
+        text-align: center;
+        border: 1px solid black;
     }
     .from-control {
         border: 2px solid black;
         margin-bottom: 10px;
     }
-    </style>
+    
+</style>
 </head>
 <body>
-    <h1 id="register from">Register Formxx</h1>
+    
+    <div id="register from">Register Formxx</div>
     ชื่อ: <input class="from-control" type="text" name="name"><br>
     นามสกุล: <input class="from-control" type="text" name="surname"><br>
     อายุ: <input type="number" name="age"><br>
