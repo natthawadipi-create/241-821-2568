@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--ชื่อ: <input id="fname" type="text" name="fname" value="John"><br>
+    นามสกุล: <input id="lname" type="text" name="lname" value="Doe"><br>
+    <script>
+        // Select DOM
+        const fnameinput = document.getElementById('fname');
+        console.log(fnameinput.value); // Output: John
+        const lnameinput = document.getElementById('lname');
+        console.log(lnameinput.value); // Output: Doe-->
+        <!--ชื่อ: <input id="fname" class="input" type="text" name="fname" value="John"><br>
+    นามสกุล: <input id="lname" class="input" type="text" name="lname" value="Doe"><br>
+    <script>
+        // Select DOM
+        const fnameinput = document.getElementsByClassName('input');
+        console.log(fnameinput); 
+        for(let i=0; i<fnameinput.length; i++){
+            console.log(fnameinput[i].value);
+        }
+
+    </script>-->
+    <!--ชื่อ: <input id="fname" class="input" type="text" name="fname" value="John"><br>
+    <script>// Select DOM
+        const fnameinput = document.querySelector('#fname');
+        console.log(fnameinput.value);
+
+    </script>-->
+    <!--ชื่อ: <input id="fname" class="input" type="text" name="fname" value="John"><br>
+    <script>
+        //select DoM
+        const fnameinput = document.querySelector('input[name="fname"]');
+    </script>-->
+    <!--งานอดิเรก:
+    <input type="checkbox" name="hobby" value="football">Football
+    <input type="checkbox" name="hobby" value="basketball">Basketball
+    <input type="checkbox" name="hobby" value="tennis">Tennis
+    <script>
+        let checkboxs = document.querySelectorAll('input[name="hobby"]')
+        for(let i=0; i<checkboxs.length; i++){
+            console.log(checkboxs[i].value);
+        }
+    </script>-->
+    <!--<button onclick="userClicked()">Submit</button>
+    <div onclick="devClick()">dev clicked</div>
+    <script>
+        function userClicked(){
+            console.log("User clicked the button!");
+        }
+        function devClick(){
+            console.log("Dev clicked the div!");
+        }
+
+    </script>-->
+    <input type="radio" name="gender" value="male" onchange="onchangeGender()" checked="true"> ชาย
+    <input type="radio" name="gender" value="female" onchange="onchangeGender()" > หญิง
+    <script>
+        function onchangeGender(){
+            console.log("onchangeGender");
+            //เลือก genber ทุก input ออกมา
+            let genberinputs=document.querySelectorAll('input[name="genber"]');
+            //checked คตัวไหน มี checkอยู่ ให้เอา value มาแสดง
+            for(let i=0; i<genberinputs.length; i++){
+                if(genberinputs[i].checked){
+                    console.log("เพศที่เลือก: "+genberinputs[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
