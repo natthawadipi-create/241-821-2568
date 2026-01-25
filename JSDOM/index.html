@@ -57,20 +57,87 @@
         }
 
     </script>-->
-    <input type="radio" name="gender" value="male" onchange="onchangeGender()" checked="true"> ชาย
+    <!--<input type="radio" name="gender" value="male" onchange="onchangeGender()" checked="true"> ชาย
     <input type="radio" name="gender" value="female" onchange="onchangeGender()" > หญิง
     <script>
         function onchangeGender(){
             console.log("onchangeGender");
-            //เลือก genber ทุก input ออกมา
-            let genberinputs=document.querySelectorAll('input[name="genber"]');
-            //checked คตัวไหน มี checkอยู่ ให้เอา value มาแสดง
-            for(let i=0; i<genberinputs.length; i++){
-                if(genberinputs[i].checked){
-                    console.log("เพศที่เลือก: "+genberinputs[i].value);
+            //เลือก gender ทุก input ออกมา
+            let genderinputs=document.querySelectorAll('input[name="gender"]');
+            //checked ตัวไหน มี checkอยู่ ให้เอา value มาแสดง
+            for(let i=0; i<genderinputs.length; i++){
+                if(genderinputs[i].checked){
+                    console.log("เพศที่เลือก: "+genderinputs[i].value);
                 }
             }
         }
+    </script>-->
+    <!--ชื่อ:
+    <input type="text" name="fname" onkeydown="onkeyfname()" onkeyup="onkeyfname()">
+    <script>
+        function  onkeyfname(){
+            let fname=document.querySelector("input[name='fname']");
+            console.log("fname",fname.value);
+        }
+    </script>-->
+    <!--<button 
+    onmouseover="onmouseoverfname()"
+    onmouseover="onmouseupfname()"
+    onmousedown="onmousedownfname()"
+    >Click me</button>
+    <script>
+        //เมื่อเอาเมาส์ไปชี้ปุ่ม ให้ทำงานฟังก์ชันนี้
+        function onmouseoverfname(){
+            console.log("Mouse is over the button");
+        }
+        function onmouseupfname(){
+            console.log("Mouse is up the button");
+        }
+        function onmousedownfname(){
+            console.log("Mouse down")
+        }
+    </script>-->
+    <!--<div id="hi">Hi<span style="display: none;">A</span></div>
+    <script>
+        let hiDOM=document.getElementById("hi");
+        hiDOM.textContent='hello <b>A</b>';
+        console.log(hiDOM.textContent);
+        console.log(hiDOM.innerText);
+        console.log(hiDOM.innerHTML);
+    </script>-->
+    <h1>แบบฟอร์มเลือกความสนใจ</h1>
+    <div id="content">
+        <!--<ul>
+            <li>กีฬา</li>
+            <li>ดนตรี</li>
+            <li>อ่านหนังสือ</li>
+        </ul>-->
+    </div>
+    <input type="checkbox" name="interest" value="กีฬา">กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี">ดนตรี
+    <input type="checkbox" name="interest" value="อ่านหนังสือ">อ่านหนังสือ
+    <br><br>
+    <button onclick="submitinterest()">ส่งข้อมูล</button>
+    <script>
+        function submitinterest(){
+            //ดึงข้อมูลจากcheckbox ทีทถูกเลือก
+            let checkboxes=document.querySelectorAll('input[name="interest"]');
+            let contentHTML='<ul>';
+            //เอาvalue ของcheckbox ที่ถูกเลือกออกมา
+            for(let i=0; i<checkboxes.length; i++){
+                if(checkboxes[i].checked){
+                    console.log(checkboxes[i].value);//แสดงค่าที่เลือกในconsole
+                    contentHTML+='<li>'+checkboxes[i].value+'</li>';
+                }
+            }
+            //วนคำที่เลือกใส่กลับไปที่html
+            contentHTML+='</ul>';
+            console.log(contentHTML);
+            //ใส่htmlที่สร้างขึ้นลงในdiv id="content"
+            let contentdiv=document.getElementById('content');
+            contentdiv.innerHTML=contentHTML;
+        }
+        
     </script>
 </body>
 </html>
