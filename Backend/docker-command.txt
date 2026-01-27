@@ -1,0 +1,26 @@
+docker run hello-world
+docker ps
+//docker lidt container all
+docker ps --all
+docker run busybox echo 'hello world in docker'
+docker run busybox ls 
+docker run busybox ping google.com
+docker stop CONTAINER ID
+docker pull busybox
+docker create busybox ping google.com
+docker start CONTAINER ID
+docker rm CONTAINER ID //ลบ CONTAINER ID นั้น
+docker system prune//ลบทั้งหมด
+docker run nginx
+docker exec -it CONTAINER ID sh//เข้าใน image ของ nginx
+# ls//เพื่อแสดงไฟล์
+#exit
+docker exec -it CONTAINER ID bash
+cd/usr/share/nginx/html
+cat index.html
+docker run -p 80:80 nginx
+docker run -p 9000:80 nginx
+docker run -d -p 9001:80 nginx
+docker stop CONTAINER ID1 CONTAINER ID2//เพื่อลบหลายตัว
+docker system into
+docker lods <container>
