@@ -24,3 +24,4 @@ docker run -d -p 9001:80 nginx
 docker stop CONTAINER ID1 CONTAINER ID2//เพื่อลบหลายตัว
 docker system into
 docker lods <container>
+docker-compose up -d
