@@ -1,96 +1,81 @@
-/* นำเข้าฟอนต์ Prompt จาก Google Fonts เพื่อความสวยงามของภาษาไทย */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
-
+/* ตั้งค่าพื้นฐาน */
 * {
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Prompt', sans-serif;
     background-color: #f0f2f5;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
 
 /* กล่องคอนเทนเนอร์หลัก */
 .container {
     background-color: #ffffff;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
 }
 
-/* หัวข้อแบบฟอร์ม */
+/* หัวข้อ Register form */
 .header {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
     color: #333;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #eee;
     padding-bottom: 10px;
-    display: inline-block;
-    width: 100%;
 }
 
-/* การจัดวาง Layout แบบ Flexbox */
+/* จัดระเบียบ Flex */
 .flex {
     display: flex;
+    gap: 15px;
     align-items: center;
 }
 
-/* ระยะห่างของแต่ละช่อง input */
+/* ระยะห่างของแต่ละส่วนอินพุต */
 .form-input {
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* ให้ตกบรรทัดได้ถ้าหน้าจอเล็ก */
+    margin-bottom: 1.2rem;
 }
 
-/* ป้ายกำกับหน้าช่อง input (ชื่อ, นามสกุล, ฯลฯ) */
 .header-form {
-    width: 100px; /* ความกว้างคงที่เพื่อให้ช่อง input ตรงกัน */
-    font-weight: 500;
+    min-width: 70px;
+    font-weight: 600;
     color: #555;
-    flex-shrink: 0;
 }
 
-/* ช่องกรอกข้อมูลทั่วไป */
-input.form {
-    flex-grow: 1;
-    padding: 10px 15px;
+/* ตกแต่งช่อง Input และ Textarea */
+.form, textarea {
+    width: 100%;
+    padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: all 0.3s ease;
     outline: none;
+    transition: border-color 0.3s;
 }
 
-input.form:focus {
+.form:focus, textarea:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-/* ส่วนของเพศ */
+textarea {
+    height: 80px;
+    resize: vertical;
+    margin-top: 5px;
+}
+
+/* จัดการส่วนเพศและงานอดิเรก */
 .gender .flex {
-    gap: 15px; /* ระยะห่างระหว่างตัวเลือกเพศ */
-}
-
-.gender input[type="radio"] {
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-/* ส่วนของงานอดิเรก */
-input[type="checkbox"] {
-    margin-right: 8px;
-    cursor: pointer;
+    flex-wrap: wrap;
 }
 
 .form-input div {
@@ -98,43 +83,39 @@ input[type="checkbox"] {
     color: #444;
 }
 
-/* ช่องคำอธิบาย (Textarea) */
-textarea {
-    width: 100%;
-    height: 100px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 14px;
-    resize: vertical; /* ย่อขยายได้แค่แนวตั้ง */
-}
-
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
 /* ปุ่มส่งข้อมูล */
 .center {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.message{
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px; 
+}
+
+.message.success{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.message.danger{
+    background-color: #f44336;
+    color: white;
 }
 
 .button {
     background-color: #007bff;
     color: white;
+    padding: 10px 25px;
     border: none;
-    padding: 12px 40px;
+    border-radius: 6px;
     font-size: 16px;
-    font-weight: 500;
-    border-radius: 50px;
     cursor: pointer;
-    font-family: inherit;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
 }
 
 .button:hover {
@@ -143,21 +124,4 @@ textarea:focus {
 
 .button:active {
     transform: scale(0.98);
-}
-
-/* Responsive สำหรับมือถือ */
-@media (max-width: 480px) {
-    .flex.form-input {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .header-form {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    
-    input.form {
-        width: 100%;
-    }
 }

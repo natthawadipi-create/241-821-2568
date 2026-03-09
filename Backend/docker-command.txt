@@ -25,3 +25,4 @@ docker stop CONTAINER ID1 CONTAINER ID2//เพื่อลบหลายตั
 docker system into
 docker lods <container>
 docker-compose up -d
+npm i cors
